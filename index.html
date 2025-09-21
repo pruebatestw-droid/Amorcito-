@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para María ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(45deg, #FFE082, #FFF176, #FFEB3B, #FFF59D);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-family: 'Georgia', serif;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+        }
+
+        .message {
+            font-size: 3rem;
+            color: #FFFFFF;
+            text-shadow: 3px 3px 0px #D32F2F, 6px 6px 10px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+            animation: heartbeat 2s ease-in-out infinite;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .flowers-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .flower:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .flower:nth-child(2) { top: 20%; right: 20%; animation-delay: 0.5s; }
+        .flower:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 1s; }
+        .flower:nth-child(4) { bottom: 20%; right: 15%; animation-delay: 1.5s; }
+        .flower:nth-child(5) { top: 50%; left: 5%; animation-delay: 2s; }
+        .flower:nth-child(6) { top: 40%; right: 5%; animation-delay: 2.5s; }
+        .flower:nth-child(7) { top: 70%; left: 20%; animation-delay: 3s; }
+        .flower:nth-child(8) { top: 15%; left: 50%; animation-delay: 3.5s; }
+        .flower:nth-child(9) { bottom: 10%; left: 40%; animation-delay: 4s; }
+        .flower:nth-child(10) { top: 60%; right: 30%; animation-delay: 4.5s; }
+        .flower:nth-child(11) { top: 30%; left: 30%; animation-delay: 5s; }
+        .flower:nth-child(12) { bottom: 50%; right: 40%; animation-delay: 5.5s; }
+        .flower:nth-child(13) { top: 80%; left: 50%; animation-delay: 6s; }
+        .flower:nth-child(14) { top: 25%; right: 50%; animation-delay: 6.5s; }
+        .flower:nth-child(15) { bottom: 60%; left: 60%; animation-delay: 7s; }
+        .flower:nth-child(16) { top: 5%; left: 70%; animation-delay: 7.5s; }
+        .flower:nth-child(17) { bottom: 15%; right: 60%; animation-delay: 8s; }
+        .flower:nth-child(18) { top: 65%; left: 80%; animation-delay: 8.5s; }
+        .flower:nth-child(19) { top: 45%; right: 10%; animation-delay: 9s; }
+        .flower:nth-child(20) { bottom: 40%; left: 75%; animation-delay: 9.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(10px) rotate(-3deg); }
+        }
+
+        .falling-petals {
+            position: absolute;
+            top: -10px;
+            animation: fall 8s linear infinite;
+            font-size: 1.5rem;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .petal1 { left: 10%; animation-delay: 0s; }
+        .petal2 { left: 25%; animation-delay: 1s; }
+        .petal3 { left: 40%; animation-delay: 2s; }
+        .petal4 { left: 55%; animation-delay: 3s; }
+        .petal5 { left: 70%; animation-delay: 4s; }
+        .petal6 { left: 85%; animation-delay: 5s; }
+
+        .heart-particles {
+            position: absolute;
+            color: #E91E63;
+            animation: heartFloat 6s ease-in-out infinite;
+            font-size: 1.2rem;
+        }
+
+        .heart1 { top: 25%; left: 25%; animation-delay: 0s; }
+        .heart2 { top: 35%; right: 25%; animation-delay: 2s; }
+        .heart3 { bottom: 35%; left: 30%; animation-delay: 4s; }
+        .heart4 { top: 55%; right: 20%; animation-delay: 1s; }
+
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 1; }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 0px #F57F17, 4px 4px 8px rgba(0,0,0,0.4);
+            margin-top: 1rem;
+            animation: fadeInOut 3s ease-in-out infinite;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #FFC107;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .sparkle1 { top: 30%; left: 45%; animation-delay: 0s; }
+        .sparkle2 { bottom: 40%; right: 45%; animation-delay: 1s; }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1) rotate(180deg); opacity: 1; }
+        }
+
+        @keyframes magicalBloom {
+            0% { 
+                transform: scale(0) rotate(0deg); 
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.5) rotate(180deg); 
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(0.8) translateY(-100px) rotate(360deg); 
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .message {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .flower {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flowers-container">
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        <div class="flower">🌻</div>
+        <div class="flower">🌼</div>
+        
+        <div class="falling-petals petal1">🌸</div>
+        <div class="falling-petals petal2">🌸</div>
+        <div class="falling-petals petal3">🌸</div>
+        <div class="falling-petals petal4">🌸</div>
+        <div class="falling-petals petal5">🌸</div>
+        <div class="falling-petals petal6">🌸</div>
+        
+        <div class="heart-particles heart1">💛</div>
+        <div class="heart-particles heart2">💛</div>
+        <div class="heart-particles heart3">💛</div>
+        <div class="heart-particles heart4">💛</div>
+        
+        <div class="sparkle sparkle1">✨</div>
+        <div class="sparkle sparkle2">✨</div>
+    </div>
+
+    <div class="container">
+        <div class="message">Te amo mi María bonita ❤️</div>
+        <div class="subtitle">Eres mi sol, mi primavera eterna 🌻</div>
+    </div>
+
+    <script>
+        // Crear más pétalos cayendo dinámicamente
+        function createFallingPetal() {
+            const petal = document.createElement('div');
+            petal.innerHTML = Math.random() > 0.5 ? '🌸' : '🌼';
+            petal.className = 'falling-petals';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.querySelector('.flowers-container').appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 8000);
+        }
+
+        // Crear pétalos cada 1.5 segundos
+        setInterval(createFallingPetal, 1500);
+
+        // Efecto de click para crear girasoles mágicos
+        document.addEventListener('click', function(e) {
+            createMagicalSunflower(e.clientX, e.clientY);
+        });
+
+        // También para touch en móviles
+        document.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            createMagicalSunflower(touch.clientX, touch.clientY);
+        });
+
+        function createMagicalSunflower(x, y) {
+            // Crear múltiples girasoles con efecto explosión
+            for(let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const sunflower = document.createElement('div');
+                    sunflower.innerHTML = '🌻';
+                    sunflower.style.position = 'fixed';
+                    sunflower.style.left = (x + (Math.random() - 0.5) * 100) + 'px';
+                    sunflower.style.top = (y + (Math.random() - 0.5) * 100) + 'px';
+                    sunflower.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';
+                    sunflower.style.pointerEvents = 'none';
+                    sunflower.style.zIndex = '1000';
+                    sunflower.style.animation = 'magicalBloom 3s ease-out forwards';
+                    document.body.appendChild(sunflower);
+                    
+                    setTimeout(() => {
+                        sunflower.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+
+            // Crear corazones dorados
+            for(let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💛';
+                    heart.style.position = 'fixed';
+                    heart.style.left = (x + (Math.random() - 0.5) * 60) + 'px';
+                    heart.style.top = (y + (Math.random() - 0.5) * 60) + 'px';
+                    heart.style.fontSize = '1.5rem';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.zIndex = '1000';
+                    heart.style.animation = 'heartFloat 2s ease-out forwards';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 2000);
+                }, i * 150);
+            }
+
+            // Crear destellos
+            for(let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.innerHTML = '✨';
+                    sparkle.style.position = 'fixed';
+                    sparkle.style.left = (x + (Math.random() - 0.5) * 120) + 'px';
+                    sparkle.style.top = (y + (Math.random() - 0.5) * 120) + 'px';
+                    sparkle.style.fontSize = '1rem';
+                    sparkle.style.pointerEvents = 'none';
+                    sparkle.style.zIndex = '1000';
+                    sparkle.style.animation = 'sparkle 1.5s ease-out forwards';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 1500);
+                }, i * 50);
+            }
+        }
+    </script>
+</body>
+</html
